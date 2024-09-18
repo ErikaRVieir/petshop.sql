@@ -2,33 +2,33 @@
 CREATE DATABASE sistemapetshop;
 
 /*2- Criando tabela Cliente no banco de dados*/
-CREATE TABLE cliente (
+CREATE TABLE cliente {
     cpf VARCHAR(15) primary key,
     nomecliente VARCHAR(200) NOT NULL,
      telefone VARCHAR(30) NOT NULL
-)
+};
 
 /*Criando tabela Veterinário no banco de dados*/
-CREATE TABLE veterinario(
+CREATE TABLE veterinario{
     crmv INT(10) primary key,
     nomevet VARCHAR(200) NOT NULL,
-    salario FLOAT (10) NOT NULL,
+    salario DECIMAL (10) NOT NULL,
     dataadmissao DATE NOT NULL
-)
+};
 
 /*Criando tabela Consulta no banco de dados*/
-CREATE TABLE consulta(
+CREATE TABLE consulta{
     diaconsulta DATE NOT NULL,
     motivo VARCHAR (200) NOT NULL,
     horario DATE NOT NULL
-)
+};
 /*Criando tabela Animal no banco de dados*/
-CREATE TABLE animal(
+CREATE TABLE animal{
     codanimal INT(10) primary key,
     nomeanimal VARCHAR(100) NOT NULL,
     raca VARCHAR(50) NOT NULL,
     anonascimento DATE NOT NULL
-)
+};
 
 
 /* 3-Realize a alteração do atributo da tabela cliente de nomecliente para nomecompleto */
