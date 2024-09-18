@@ -2,33 +2,33 @@
 CREATE DATABASE sistemapetshop;
 
 /*2- Criando tabela Cliente no banco de dados*/
-CREATE TABLE cliente {
+CREATE TABLE cliente (
     cpf VARCHAR(15) primary key,
     nomecliente VARCHAR(200) NOT NULL,
      telefone VARCHAR(30) NOT NULL
-};
+);
 
 /*Criando tabela Veterinário no banco de dados*/
-CREATE TABLE veterinario{
-    crmv INT(10) primary key,
+CREATE TABLE veterinario(
+    crmv VARCHAR(20) primary key,
     nomevet VARCHAR(200) NOT NULL,
-    salario DECIMAL (10) NOT NULL,
+    salario DECIMAL (5,2) NOT NULL,
     dataadmissao DATE NOT NULL
-};
+);
 
 /*Criando tabela Consulta no banco de dados*/
-CREATE TABLE consulta{
+CREATE TABLE consulta(
     diaconsulta DATE NOT NULL,
     motivo VARCHAR (200) NOT NULL,
-    horario DATE NOT NULL
-};
+    horario TIME NOT NULL
+);
 /*Criando tabela Animal no banco de dados*/
-CREATE TABLE animal{
+CREATE TABLE animal(
     codanimal INT(10) primary key,
     nomeanimal VARCHAR(100) NOT NULL,
     raca VARCHAR(50) NOT NULL,
     anonascimento DATE NOT NULL
-};
+);
 
 
 /* 3-Realize a alteração do atributo da tabela cliente de nomecliente para nomecompleto */
@@ -45,14 +45,15 @@ DROP COLUMN nomeanimal;
 
 /*Adicione novamente o atributo com o nome: nomeanimalzinho*/
 ALTER TABLE animal
-ADD nomeanimalzinho VARCHAR(50);
+ADD nomeanimalzinho VARCHAR(50) NOT NULL;
 
 /* 6-insira os dados "Ana Claudia Cunha" para nome da cliente, telefone 11999998888, e cpf 1144444411 na tabela do cliente*/
 INSERT INTO cliente (nomecompleto, telefone, cpf)
-VALUES ('Ana Claudia Cunha', "11999998888", 1144444411);
+VALUES ('Ana Claudia Cunha', "(11)9999-8888", 1144444411);
 
 /* 7-Por fim, realize a exclusão dos dados da tabela cliente*/
 DELETE FROM cliente WHERE cpf=1144444411;
+DELETE FROM cliente;/*TODOS OS DADOS*/
 
 
 
